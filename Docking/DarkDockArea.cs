@@ -1,0 +1,11 @@
+﻿namespace DarkTheme.Docking
+{
+    public enum DarkDockArea
+    {
+        None,
+        Document,
+        Left,
+        Right,
+        Bottom
+    }
+}
