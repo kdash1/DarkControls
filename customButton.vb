@@ -1,5 +1,9 @@
 Imports System.Drawing.Drawing2D
 
+''' <summary>
+''' Forked from a public repository
+''' </summary>
+''' <see cref="https://github.com/kdash1/DarkControls/blob/main/customButton.vb"/>
 Public Class customButton
     Inherits Button
 
