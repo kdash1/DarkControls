@@ -106,6 +106,20 @@ Public Class customProgress
         End If
         DrawProgress(e.Graphics, New Rectangle(5, 5, Diameter, Diameter), _percent, StaticCircleSize, DynamicCircleSize)
     End Sub
+    ''' <summary>
+    ''' To update the progress percent and circle
+    ''' </summary>
+    ''' <param name="percent"> Percentage to be updated </param>
+    ''' <returns> Current Percentage </returns>
+    Public Function updatePercent(percent As Integer)
+        Dim initPercent As Integer = Me.Percent
+        For x% = initPercent To percent - 1
+            System.Threading.Thread.Sleep(5)
+            Me.Percent += 1
+            Me.Refresh()
+        Next
+        Return Me.Percent
+    End Function
 #End Region
     
 End Class
