@@ -1,8 +1,12 @@
 Imports System.ComponentModel
 Public Class customProgress
+    
+#Region "Members"
     Dim _percent, _dia, _staticSize, _dynamicSize As Integer
     Dim _staticColor, _dynamicColor As Color
-
+#End Region
+    
+#Region "Properties"
     <DefaultValue(GetType(Integer), "45")>
     <Description("Percentage")>
     Public Property Percent As Integer
@@ -58,6 +62,9 @@ Public Class customProgress
             _staticColor = value
         End Set
     End Property
+#End Region
+    
+#Region "Constructors"
     Private Sub DrawProgress(g As Graphics, rect As Rectangle, percentage As Single, staticCircleSize As Integer, dynamicCircleSize As Integer)
         Dim centerX As Integer = Me.Width \ 2
         Dim centerY As Integer = Me.Height \ 2
@@ -81,7 +88,6 @@ Public Class customProgress
             g.DrawString(percentage.ToString() + "%", fnt, Brushes.Black, textX, textY)
         End Using
     End Sub
-
     Private Sub UserControl1_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
         If Diameter = 0 Then
             Diameter = 70
@@ -100,4 +106,6 @@ Public Class customProgress
         End If
         DrawProgress(e.Graphics, New Rectangle(5, 5, Diameter, Diameter), _percent, StaticCircleSize, DynamicCircleSize)
     End Sub
+#End Region
+    
 End Class
